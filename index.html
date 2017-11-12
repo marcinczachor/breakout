@@ -10,9 +10,9 @@
 
 <body>
     <div id="wrapper">
-        <div id="modal">
+        <div class="modal">
             <div class="modal-container">
-                <div id="start-game">START GAME</div>
+                <div class="start-game">START GAME</div>
             </div>
             <aside class="modal-container">
                 <h2>Breakout Game</h2>
@@ -31,21 +31,22 @@
                 </div>
             </aside>
         </div>
-        <div id="game">
-            <div id="score-board">
+        <div class="game">
+            <div class="score-board">
                 <h2>Score Board</h2>
-                <div id="score">
-                    <h3>Level: <span id="game-level"></span></h3>
-                    <h3>Score: <span id="player-score"></span></h3>
-                    <h3>Lives: <span id="player-lives"></span></h3>
-                    <h3>Timer: <span id="game-timer"></span></h3>
+                <div class="score">
+                    <h3>Level: <span class="game-level"></span></h3>
+                    <h3>Score: <span class="player-score"></span></h3>
+                    <h3>Lives: <span class="player-lives"></span></h3>
+                    <h3>Timer: <span class="game-timer"></span></h3>
                 </div>
             </div>
-            <div id="container">
-                <canvas id="board" width="1280" height="720"></canvas>
+            <div class="container">
+                <canvas class="board" width="1280" height="720"></canvas>
             </div>
         </div>
     </div>
+
     <script src="dist/js/bundle.js"></script>
 </body>
 
