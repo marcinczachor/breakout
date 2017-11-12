@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Breakout Game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="modal">
+            <div class="modal-container">
+                <div id="start-game">START GAME</div>
+            </div>
+            <aside class="modal-container">
+                <h2>Breakout Game</h2>
+                <div>
+                    <h3>Description</h3>
+                    <p>
+                        The game consist of ball, paddle and wall of bricks. A player has 3 attempts to accomplish the current level. If a player aquires 150 points, 
+                        the next level is set and ball starts to move faster. Also a player gains one additional life. The game finishes when a player reaches max 
+                        level, which is currently set to 3 or loose all his available lives. 
+                    </p>
+                    <h3>Controls</h3>
+                    <ul>
+                        <li>Move paddle to the left by clicking &#8678 (left arrow).</li>
+                        <li>Move paddle to the right by clicking &#8680 (right arrow).</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <div id="game">
+            <div id="score-board">
+                <h2>Score Board</h2>
+                <div id="score">
+                    <h3>Level: <span id="game-level"></span></h3>
+                    <h3>Score: <span id="player-score"></span></h3>
+                    <h3>Lives: <span id="player-lives"></span></h3>
+                    <h3>Timer: <span id="game-timer"></span></h3>
+                </div>
+            </div>
+            <div id="container">
+                <canvas id="board" width="1280" height="720"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="dist/js/bundle.js"></script>
+</body>
+
+</html>
