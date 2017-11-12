@@ -1,0 +1,26 @@
+{
+    "name": "breakout",
+    "version": "2.0.0",
+    "description": "Breakout Game",
+    "main": "app.js",
+    "scripts": {
+        "start": "webpack-dev-server",
+        "watch": "gulp watch",
+        "build": "webpack -p && gulp build"
+    },
+    "author": "Marcin Czachor",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.0.0-beta.31",
+        "@babel/preset-env": "^7.0.0-beta.31",
+        "babel-loader": "^8.0.0-beta.0",
+        "css-loader": "^0.28.7",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "^3.9.0",
+        "gulp-concat-css": "^2.3.0",
+        "gulp-html-minifier2": "^1.1.8",
+        "style-loader": "^0.19.0",
+        "webpack": "^3.8.1",
+        "webpack-dev-server": "^2.9.4"
+    }
+}
