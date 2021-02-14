@@ -5,12 +5,6 @@ import ball from './ball';
 import paddle from './paddle';
 // import '../css/styles.css';
 
-const c = {};
-
-const d = { ...c };
-
-console.log(d);
-
 const app = (function () {
   //Variables
   const board = qs('.board');

@@ -1,9 +1,10 @@
 {
   "name": "breakout",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Breakout Game",
-  "main": "app.js",
+  "main": "index.ts",
   "scripts": {
+    "start:dev": "serve dist",
     "build": "rollup -c",
     "format": "prettier --write ."
   },
@@ -14,11 +15,16 @@
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "@types/node": "^14.14.28",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "prettier": "^2.2.1",
-    "rollup": "^2.39.0"
+    "rollup": "^2.39.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "serve": "^11.3.2",
+    "tslib": "^2.1.0"
   }
 }
