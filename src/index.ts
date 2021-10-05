@@ -1,1 +1,1 @@
-alert('bundle');
+import './js/app';
