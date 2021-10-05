@@ -1,0 +1,6 @@
+/public/**/*.js
+/public/**/*.css
+/public/**/*.html
+*.md
+
+rollup.config.js

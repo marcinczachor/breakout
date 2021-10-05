@@ -3,5 +3,5 @@
     "module": "ESNext"
   },
   "extends": "@tsconfig/recommended/tsconfig.json",
-  "include": ["src"]
+  "include": ["ui", "engine"]
 }
