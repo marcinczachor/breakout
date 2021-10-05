@@ -1,8 +1,13 @@
 {
-  "name": "breakout",
+  "name": "breakout-game",
   "version": "3.0.0",
   "description": "Breakout Game",
   "main": "index.ts",
+  "private": true,
+  "workspaces": [
+    "engine",
+    "ui"
+  ],
   "scripts": {
     "start:dev": " rollup -c -w",
     "build": "rollup -c",
@@ -20,11 +25,12 @@
     "@typescript-eslint/parser": "^4.15.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
+    "postcss": "^8.3.9",
     "prettier": "^2.2.1",
     "rollup": "^2.39.0",
-    "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-typescript2": "^0.29.0",
     "serve": "^11.3.2",
