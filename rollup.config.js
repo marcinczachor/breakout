@@ -1,4 +1,5 @@
 import svelte from 'rollup-plugin-svelte';
+import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
@@ -7,7 +8,11 @@ import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 
+import path from 'path'
+
 const production = !process.env.ROLLUP_WATCH;
+
+const projectRootDir = path.resolve(__dirname);
 
 function serve() {
   let server;
@@ -49,6 +54,19 @@ export default {
         // enable run-time checks when not in production
         dev: !production,
       },
+    }),
+    alias({
+      entries: [
+        {
+          find: 'components',
+          replacement: path.resolve(projectRootDir, 'ui/src/components'),
+        },
+        {
+          find: 'pages',
+          replacement: path.resolve(projectRootDir, 'ui/src/pages'),
+        },
+      ],
+      resolve: ['.svelte', '.js', '.ts'],
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance

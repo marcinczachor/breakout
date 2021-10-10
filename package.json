@@ -12,7 +12,7 @@
     "build": "rollup -c",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "format": "prettier --write .",
-    "start": "sirv public --no-clear",
+    "start": "sirv public --no-clear --single",
     "start:dev": "rollup -c -w"
   },
   "author": "Marcin Czachor",
@@ -22,6 +22,7 @@
     "typescript": "^4.1.5"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.5",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-typescript": "^8.0.0",

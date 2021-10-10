@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "module": "ESNext"
+    "baseUrl": ".",
+    "module": "ESNext",
+    "paths": {
+      "components/*": ["ui/src/components/*"],
+      "pages/*": ["ui/src/pages/*"]
+    }
   },
   "extends": "@tsconfig/recommended/tsconfig.json",
   "include": ["ui", "engine"]
