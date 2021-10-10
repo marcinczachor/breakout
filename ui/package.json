@@ -1,5 +1,8 @@
 {
   "name": "ui",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "svelte-routing": "^1.6.0"
+  }
 }

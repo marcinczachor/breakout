@@ -12,7 +12,7 @@
     "build": "rollup -c",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "format": "prettier --write .",
-    "start": "sirv public --no-clear",
+    "start": "sirv public --no-clear --single",
     "start:dev": "rollup -c -w"
   },
   "author": "Marcin Czachor",
