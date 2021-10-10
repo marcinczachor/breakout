@@ -1,7 +1,3 @@
-<script lang="ts">
-  export let text: string;
-</script>
-
 <style>
   .text {
     margin: 0 0 1rem;
@@ -9,4 +5,6 @@
   }
 </style>
 
-<h1 class="text">{text}</h1>
+<h1 class="text">
+  <slot />
+</h1>

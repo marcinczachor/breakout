@@ -5,7 +5,6 @@
   import P from './P/P.svelte'
   import Span from './Span/Span.svelte'
 
-  export let text: string;
   export let component: 'h1' | 'h2' | 'h3' | 'p' | 'span' = 'span';
 
   type TypographyComponent = typeof H1 | typeof H2 | typeof H3 | typeof P | typeof Span
@@ -21,4 +20,6 @@
   const variant = variants[component]
 </script>
 
-<svelte:component this={variant} {text} />
+<svelte:component this={variant}>
+  <slot />
+</svelte:component>
