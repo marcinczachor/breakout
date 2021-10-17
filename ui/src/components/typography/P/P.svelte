@@ -1,6 +1,6 @@
-<script lang="ts">
-  export let text: string;
-</script>
+<p class="text">
+  <slot />
+</p>
 
 <style>
   .text {
@@ -8,5 +8,3 @@
     font-size: clamp(0.75rem, 10vw, 1rem);
   }
 </style>
-
-<p class="text">{text}</p>
