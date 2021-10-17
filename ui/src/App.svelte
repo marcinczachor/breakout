@@ -14,7 +14,3 @@
     <Route path={routes.board} component={Gameboard} />
   </Router>
 </Container>
-
-<style>
-  @import 'normalize.css';
-</style>
