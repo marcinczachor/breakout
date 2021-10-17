@@ -4,7 +4,10 @@
     "module": "ESNext",
     "paths": {
       "components/*": ["ui/src/components/*"],
-      "pages/*": ["ui/src/pages/*"]
+      "constants/*": ["ui/src/constants/*"],
+      "helpers/*": ["ui/src/helpers/*"],
+      "pages/*": ["ui/src/pages/*"],
+      "types/*": ["ui/src/types/*"]
     }
   },
   "extends": "@tsconfig/recommended/tsconfig.json",

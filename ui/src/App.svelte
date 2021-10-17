@@ -1,14 +1,20 @@
 <script lang="ts">
-	import { Route, Router } from 'svelte-routing';
+  import { Route, Router } from 'svelte-routing';
 
-	import Theme from 'components/theme/Theme.svelte';
-	import Gameboard from 'pages/gameboard/Gameboard.svelte';
-	import Homepage from 'pages/homepage/Homepage.svelte';
+  import Container from 'components/container/Container.svelte';
+  import Gameboard from 'pages/gameboard/Gameboard.svelte';
+  import Homepage from 'pages/homepage/Homepage.svelte';
+
+  import { routes } from 'constants/routes';
 </script>
 
-<Theme>
-	<Router basepath="/">
-		<Route path="/" component={Homepage} />
-		<Route path="/board" component={Gameboard} />
-	</Router>
-</Theme>
+<Container>
+  <Router basepath={routes.homepage}>
+    <Route path={routes.homepage} component={Homepage} />
+    <Route path={routes.board} component={Gameboard} />
+  </Router>
+</Container>
+
+<style>
+  @import 'normalize.css';
+</style>
