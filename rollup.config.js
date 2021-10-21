@@ -42,8 +42,8 @@ function serve() {
 export default {
   input: 'index.ts',
   output: {
-    sourcemap: true,
-    format: 'iife',
+    sourcemap: !production,
+    format: 'esm',
     name: 'app',
     file: 'public/build/bundle.js',
   },
