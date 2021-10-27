@@ -1,8 +1,19 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   import { colors } from 'constants/colors';
+
+  let canvas: HTMLCanvasElement;
+
+  onMount(() => {
+    const context = canvas?.getContext('2d');
+
+    console.log({ canvas, context });
+  });
 </script>
 
 <canvas
+  bind:this={canvas}
   class="board"
   style="--color-primary: {colors.turquoise[400]};
         --color-white: {colors.white[400]}"
