@@ -1,14 +1,14 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import { colors } from 'constants/colors';
+  import { colors } from '@ui/constants/colors';
 
   let canvas: HTMLCanvasElement;
 
   onMount(() => {
-    const context = canvas?.getContext('2d');
+    const context = canvas.getContext('2d');
 
-    console.log({ canvas, context });
+    console.log({ context });
   });
 </script>
 

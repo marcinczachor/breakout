@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { colors } from 'constants/colors';
+  import { colors } from '@ui/constants/colors';
 
   export let score = 0;
   export let timer = 0;

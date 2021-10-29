@@ -3,12 +3,16 @@
     "baseUrl": ".",
     "module": "ESNext",
     "paths": {
-      "components/*": ["ui/src/components/*"],
-      "constants/*": ["ui/src/constants/*"],
-      "helpers/*": ["ui/src/helpers/*"],
-      "pages/*": ["ui/src/pages/*"],
-      "types/*": ["ui/src/types/*"]
-    }
+      "@engine/collisions/*": ["engine/collisions/*"],
+      "@engine/elements/*": ["engine/elements/*"],
+      "@engine/types/*": ["engine/types/*"],
+      "@ui/components/*": ["ui/src/components/*"],
+      "@ui/constants/*": ["ui/src/constants/*"],
+      "@ui/helpers/*": ["ui/src/helpers/*"],
+      "@ui/pages/*": ["ui/src/pages/*"],
+      "@ui/types/*": ["ui/src/types/*"]
+    },
+    "strict": true
   },
   "extends": "@tsconfig/recommended/tsconfig.json",
   "include": ["ui", "engine"]

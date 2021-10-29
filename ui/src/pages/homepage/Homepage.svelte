@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Link from 'components/link/Link.svelte';
-  import Typography from 'components/typography/Typography.svelte';
+  import Link from '@ui/components/link/Link.svelte';
+  import Typography from '@ui/components/typography/Typography.svelte';
 </script>
 
 <section class="section">

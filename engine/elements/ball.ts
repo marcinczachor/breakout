@@ -1,4 +1,4 @@
-import type { Ball, CreateBallParams } from 'types/ball';
+import type { Ball, CreateBallParams } from '@engine/types/ball';
 
 const setBallParms = ({ x = 0, y = 0, radius = 15 } = {}): Ball => ({
   x,
@@ -7,9 +7,13 @@ const setBallParms = ({ x = 0, y = 0, radius = 15 } = {}): Ball => ({
 });
 
 export const createBall = (
-  context: CanvasRenderingContext2D,
+  context: CanvasRenderingContext2D | null,
   options: CreateBallParams
 ): void => {
+  if (!context) {
+    return;
+  }
+
   const { x, y, radius } = setBallParms();
 
   const {
