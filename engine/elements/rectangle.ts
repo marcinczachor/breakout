@@ -4,11 +4,11 @@ import {
 } from '@engine/types/rectangle';
 
 export const setRectangleParms = ({
-  x = 0,
-  y = 0,
-  height = 50,
-  width = 230,
-} = {}): Rectangle => ({
+  x,
+  y,
+  height,
+  width,
+}: Rectangle): Rectangle => ({
   x,
   y,
   height,
