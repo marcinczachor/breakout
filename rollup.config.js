@@ -62,8 +62,8 @@ export default {
           replacement: path.resolve(projectRootDir, 'engine/collisions'),
         },
         {
-          find: '@engine/elements',
-          replacement: path.resolve(projectRootDir, 'engine/elements'),
+          find: '@engine/shapes',
+          replacement: path.resolve(projectRootDir, 'engine/shapes'),
         },
         {
           find: '@engine/types',

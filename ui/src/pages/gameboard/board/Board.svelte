@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  import { init } from '@engine/main';
   import { colors } from '@ui/constants/colors';
 
   let canvas: HTMLCanvasElement;
@@ -8,7 +9,11 @@
   onMount(() => {
     const context = canvas.getContext('2d');
 
-    console.log({ context });
+    const frame = requestAnimationFrame(() => init(context));
+
+    return () => {
+      cancelAnimationFrame(frame);
+    };
   });
 </script>
 
