@@ -1,22 +1,23 @@
-import type { Ball, CreateBallParams } from '@engine/types/ball';
+import type { Circle, CreateCircleOptionsParams } from '@engine/types/circle';
 
-const setBallParms = ({ x = 0, y = 0, radius = 15 } = {}): Ball => ({
+export const setCircleParms = ({ x = 0, y = 0, radius = 15 } = {}): Circle => ({
   x,
   y,
   radius,
 });
 
-export const createBall = (
+export const createCircle = (
   context: CanvasRenderingContext2D | null,
-  options: CreateBallParams
+  options: CreateCircleOptionsParams
 ): void => {
   if (!context) {
     return;
   }
 
-  const { x, y, radius } = setBallParms();
-
   const {
+    x,
+    y,
+    radius,
     fill,
     endAngle = 2 * Math.PI,
     startAngle = 0,
