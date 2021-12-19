@@ -1,7 +1,4 @@
-import {
-  CreateRectangleOptionsParams,
-  Rectangle,
-} from '@engine/types/rectangle';
+import { CreateRectangleOptionsParams, Rectangle } from '@engine/types/shapes';
 
 export const setRectangleParms = ({
   x,

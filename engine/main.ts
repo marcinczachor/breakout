@@ -1,12 +1,11 @@
 import { colors } from '@ui/src/constants/colors';
-import {
-  detectHorizontalCollision,
-  detectVerticalCollision,
-} from './collisions/board';
-import { detectCollision } from './collisions/paddle';
+
+import { detectBoardCollisions } from './collisions/board';
+import { detectPaddleCollisions } from './collisions/paddle';
 import { clearCanvas } from './helpers/board';
 import { createCircle } from './shapes/circle';
 import { createRectangle } from './shapes/rectangle';
+import { Ball, Board, Paddle } from './types/elements';
 
 export const init = (
   context: CanvasRenderingContext2D | null
@@ -24,39 +23,46 @@ export const init = (
   let y = 300;
 
   const draw = () => {
+    const BALL_PARAMS: Ball = {
+      x,
+      dx,
+      y,
+      dy,
+      radius: 15,
+    };
+
+    const BOARD_PARAMS: Board = {
+      height: context.canvas.height,
+      width: context.canvas.width,
+    };
+
+    const PADDLE_PARAMS: Paddle = {
+      x: context.canvas.width / 2 - 75,
+      y: context.canvas.height - 25,
+      dx: 10,
+      height: 15,
+      width: 150,
+    };
+
     frame = requestAnimationFrame(draw);
 
     clearCanvas(context);
 
-    const isHorizontalCollisionDetected = detectHorizontalCollision({
-      x,
-      dx,
-      ballRadius: 15,
-      boardWidth: context.canvas.width,
+    const { isHorizontalCollisionDetected, isVerticalCollisionDetected } =
+      detectBoardCollisions({
+        ballParams: BALL_PARAMS,
+        boardParams: BOARD_PARAMS,
+      });
+
+    const { isBallCollisionDetected } = detectPaddleCollisions({
+      ballParams: BALL_PARAMS,
+      boardParams: BOARD_PARAMS,
+      paddleParams: PADDLE_PARAMS,
     });
 
-    const isVerticalCollisionDetected = detectVerticalCollision({
-      y,
-      dy,
-      ballRadius: 15,
-      boardHeight: context.canvas.height,
-    });
-
-    const isPaddleCollisionDetected = detectCollision(
-      { x, y, dy, radius: 15 },
-      {
-        x: context.canvas.width / 2 - 75,
-        y: context.canvas.height - 25,
-        width: 150,
-      }
-    );
-
-    createCircle(context, { x, y, radius: 15, fill: colors.black[400] });
+    createCircle(context, { ...BALL_PARAMS, fill: colors.black[400] });
     createRectangle(context, {
-      x: context.canvas.width / 2 - 75,
-      y: context.canvas.height - 25,
-      width: 150,
-      height: 15,
+      ...PADDLE_PARAMS,
       fill: colors.waxFlower[600],
     });
 
@@ -64,7 +70,7 @@ export const init = (
       dx = -dx;
     }
 
-    if (isVerticalCollisionDetected || isPaddleCollisionDetected) {
+    if (isVerticalCollisionDetected || isBallCollisionDetected) {
       dy = -dy;
     }
 

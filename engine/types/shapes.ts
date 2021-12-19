@@ -10,3 +10,14 @@ export interface CreateCircleOptionsParams extends Circle {
   startAngle?: number;
   isCounterClockwise?: boolean;
 }
+
+export interface Rectangle {
+  x: number;
+  y: number;
+  height: number;
+  width: number;
+}
+
+export interface CreateRectangleOptionsParams extends Rectangle {
+  fill: string;
+}
