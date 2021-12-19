@@ -58,23 +58,39 @@ export default {
     alias({
       entries: [
         {
-          find: 'components',
+          find: '@engine/collisions',
+          replacement: path.resolve(projectRootDir, 'engine/collisions'),
+        },
+        {
+          find: '@engine/helpers',
+          replacement: path.resolve(projectRootDir, 'engine/helpers'),
+        },
+        {
+          find: '@engine/shapes',
+          replacement: path.resolve(projectRootDir, 'engine/shapes'),
+        },
+        {
+          find: '@engine/types',
+          replacement: path.resolve(projectRootDir, 'engine/types'),
+        },
+        {
+          find: '@ui/components',
           replacement: path.resolve(projectRootDir, 'ui/src/components'),
         },
         {
-          find: 'constants',
+          find: '@ui/constants',
           replacement: path.resolve(projectRootDir, 'ui/src/constants'),
         },
         {
-          find: 'helpers',
+          find: '@ui/helpers',
           replacement: path.resolve(projectRootDir, 'ui/src/helpers'),
         },
         {
-          find: 'pages',
+          find: '@ui/pages',
           replacement: path.resolve(projectRootDir, 'ui/src/pages'),
         },
         {
-          find: 'types',
+          find: '@ui/types',
           replacement: path.resolve(projectRootDir, 'ui/src/types'),
         },
       ],

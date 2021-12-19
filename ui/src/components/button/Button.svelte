@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Typography from 'components/typography/Typography.svelte';
+  import Typography from '@ui/components/typography/Typography.svelte';
 
-  import { colors } from 'constants/colors';
-  import type { Color } from 'types/styles';
+  import { colors } from '@ui/constants/colors';
+  import type { Color } from '@ui/types/styles';
 
   export let color: Color = 'primary';
 </script>

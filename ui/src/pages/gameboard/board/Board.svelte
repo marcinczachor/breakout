@@ -1,8 +1,24 @@
 <script lang="ts">
-  import { colors } from 'constants/colors';
+  import { onMount } from 'svelte';
+
+  import { init } from '@engine/main';
+  import { colors } from '@ui/constants/colors';
+
+  let canvas: HTMLCanvasElement;
+
+  onMount(() => {
+    const context = canvas.getContext('2d');
+
+    const frame = init(context);
+
+    return () => {
+      frame && cancelAnimationFrame(frame);
+    };
+  });
 </script>
 
 <canvas
+  bind:this={canvas}
   class="board"
   style="--color-primary: {colors.turquoise[400]};
         --color-white: {colors.white[400]}"

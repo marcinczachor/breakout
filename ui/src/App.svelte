@@ -1,11 +1,11 @@
 <script lang="ts">
   import { Route, Router } from 'svelte-routing';
 
-  import Container from 'components/container/Container.svelte';
-  import Gameboard from 'pages/gameboard/Gameboard.svelte';
-  import Homepage from 'pages/homepage/Homepage.svelte';
+  import Container from '@ui/components/container/Container.svelte';
+  import Gameboard from '@ui/pages/gameboard/Gameboard.svelte';
+  import Homepage from '@ui/pages/homepage/Homepage.svelte';
 
-  import { routes } from 'constants/routes';
+  import { routes } from '@ui/constants/routes';
 </script>
 
 <Container>

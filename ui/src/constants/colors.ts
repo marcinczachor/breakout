@@ -1,4 +1,4 @@
-import { createColor } from 'helpers/colors';
+import { createColor } from '@ui/helpers/colors';
 
 const hsl: Record<string, Record<number, number>> = {
   hue: {

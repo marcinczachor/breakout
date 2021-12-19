@@ -2,6 +2,7 @@
   "name": "ui",
   "version": "1.0.0",
   "private": true,
+  "main": "main.ts",
   "dependencies": {
     "svelte-routing": "^1.6.0"
   }

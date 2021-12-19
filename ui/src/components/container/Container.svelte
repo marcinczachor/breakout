@@ -1,5 +1,5 @@
 <script>
-  import { colors } from 'constants/colors';
+  import { colors } from '@ui/constants/colors';
 </script>
 
 <main class="main" style="--color-background: {colors.gray[400]}">
