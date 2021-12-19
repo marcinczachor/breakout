@@ -1,4 +1,4 @@
-import type { Circle, CreateCircleOptionsParams } from '@engine/types/circle';
+import type { Circle, CreateCircleOptionsParams } from '@engine/types/shapes';
 
 export const setCircleParms = ({ x, y, radius }: Circle): Circle => ({
   x,
