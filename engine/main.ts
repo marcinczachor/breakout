@@ -1,11 +1,10 @@
+import { detectBoardCollisions } from '@engine/collisions/board';
+import { detectPaddleCollisions } from '@engine/collisions/paddle';
+import { clearCanvas } from '@engine/helpers/board';
+import { createCircle } from '@engine/shapes/circle';
+import { createRectangle } from '@engine/shapes/rectangle';
+import { Ball, Board, Paddle } from '@engine/types/elements';
 import { colors } from '@ui/src/constants/colors';
-
-import { detectBoardCollisions } from './collisions/board';
-import { detectPaddleCollisions } from './collisions/paddle';
-import { clearCanvas } from './helpers/board';
-import { createCircle } from './shapes/circle';
-import { createRectangle } from './shapes/rectangle';
-import { Ball, Board, Paddle } from './types/elements';
 
 export const init = (
   context: CanvasRenderingContext2D | null
