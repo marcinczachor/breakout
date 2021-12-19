@@ -5,6 +5,7 @@
     "paths": {
       "@engine/*": ["engine/*"],
       "@engine/collisions/*": ["engine/collisions/*"],
+      "@engine/helpers/*": ["engine/helpers/*"],
       "@engine/shapes/*": ["engine/shapes/*"],
       "@engine/types/*": ["engine/types/*"],
       "@ui/*": ["ui/*"],

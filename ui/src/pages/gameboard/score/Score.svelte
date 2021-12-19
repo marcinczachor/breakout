@@ -8,7 +8,7 @@
 <div
   class="score"
   style="--color-primary: {colors.turquoise[400]};
-        --color-white: {colors.white[400]}"
+        --color-black: {colors.black[400]}"
 >
   <ul class="list">
     <li class="row">
@@ -48,6 +48,6 @@
   }
 
   span {
-    color: var(--color-white);
+    color: var(--color-black);
   }
 </style>

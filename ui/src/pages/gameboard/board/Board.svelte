@@ -9,10 +9,10 @@
   onMount(() => {
     const context = canvas.getContext('2d');
 
-    const frame = requestAnimationFrame(() => init(context));
+    const frame = init(context);
 
     return () => {
-      cancelAnimationFrame(frame);
+      frame && cancelAnimationFrame(frame);
     };
   });
 </script>
