@@ -1,9 +1,14 @@
 import { detectBoardCollisions } from '@engine/collisions/board';
 import { detectPaddleCollisions } from '@engine/collisions/paddle';
 import { clearCanvas } from '@engine/helpers/board';
+import { initBall, initBoard, initPaddle } from '@engine/helpers/elements';
 import { createCircle } from '@engine/shapes/circle';
+import {
+  BALL_INIT_PARAMS,
+  BRICKS_INIT_PARAMS,
+  PADDLE_INIT_PARAMS,
+} from '@engine/constants/elements';
 import { createRectangle } from '@engine/shapes/rectangle';
-import { Ball, Board, Paddle } from '@engine/types/elements';
 import { colors } from '@ui/src/constants/colors';
 
 export const init = (
@@ -13,35 +18,30 @@ export const init = (
     return;
   }
 
+  const radius = BALL_INIT_PARAMS.RADIUS;
+
   let frame: number | undefined;
 
-  let dx = 5;
-  let dy = -5;
-
-  let x = context.canvas.width / 2;
-  let y = 300;
+  let dx = BALL_INIT_PARAMS.DX;
+  let dy = BALL_INIT_PARAMS.DY;
+  let x = BALL_INIT_PARAMS.X;
+  let y = BALL_INIT_PARAMS.Y;
 
   const draw = () => {
-    const BALL_PARAMS: Ball = {
-      x,
-      dx,
-      y,
-      dy,
-      radius: 15,
-    };
+    const BALL_PARAMS = initBall({ x, dx, y, dy, radius });
 
-    const BOARD_PARAMS: Board = {
+    const BOARD_PARAMS = initBoard({
       height: context.canvas.height,
       width: context.canvas.width,
-    };
+    });
 
-    const PADDLE_PARAMS: Paddle = {
-      x: context.canvas.width / 2 - 75,
-      y: context.canvas.height - 25,
-      dx: 10,
-      height: 15,
-      width: 150,
-    };
+    const PADDLE_PARAMS = initPaddle({
+      x: PADDLE_INIT_PARAMS.X,
+      dx: PADDLE_INIT_PARAMS.DX,
+      y: PADDLE_INIT_PARAMS.Y,
+      height: PADDLE_INIT_PARAMS.HEIGHT,
+      width: PADDLE_INIT_PARAMS.WIDTH,
+    });
 
     frame = requestAnimationFrame(draw);
 
@@ -62,7 +62,18 @@ export const init = (
     createCircle(context, { ...BALL_PARAMS, fill: colors.black[400] });
     createRectangle(context, {
       ...PADDLE_PARAMS,
-      fill: colors.waxFlower[600],
+      fill: colors.turquoise[600],
+    });
+
+    Object.values(BRICKS_INIT_PARAMS).map((levels) => {
+      levels
+        .filter(({ isActive }) => isActive)
+        .map((level) =>
+          createRectangle(context, {
+            ...level,
+            fill: colors.waxFlower[600],
+          })
+        );
     });
 
     if (isHorizontalCollisionDetected) {

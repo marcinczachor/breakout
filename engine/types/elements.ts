@@ -11,6 +11,13 @@ export interface Board {
   width: number;
 }
 
+export interface Brick {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
 export interface Paddle {
   x: number;
   dx: number;

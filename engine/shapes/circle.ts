@@ -7,13 +7,9 @@ export const setCircleParms = ({ x, y, radius }: Circle): Circle => ({
 });
 
 export const createCircle = (
-  context: CanvasRenderingContext2D | null,
+  context: CanvasRenderingContext2D,
   options: CreateCircleOptionsParams
 ): void => {
-  if (!context) {
-    return;
-  }
-
   const {
     x,
     y,
