@@ -10,6 +10,7 @@ import {
 } from '@engine/constants/elements';
 import { createRectangle } from '@engine/shapes/rectangle';
 import { colors } from '@ui/src/constants/colors';
+import { detectBrickCollisions } from './collisions/brick';
 
 export const init = (
   context: CanvasRenderingContext2D | null
@@ -26,6 +27,8 @@ export const init = (
   let dy = BALL_INIT_PARAMS.DY;
   let x = BALL_INIT_PARAMS.X;
   let y = BALL_INIT_PARAMS.Y;
+
+  let bricks = BRICKS_INIT_PARAMS;
 
   const draw = () => {
     const BALL_PARAMS = initBall({ x, dx, y, dy, radius });
@@ -65,16 +68,34 @@ export const init = (
       fill: colors.turquoise[600],
     });
 
-    Object.values(BRICKS_INIT_PARAMS).map((levels) => {
+    bricks = bricks.map((levels) =>
       levels
         .filter(({ isActive }) => isActive)
-        .map((level) =>
+        .map((level) => {
+          const { isBallCollisionDetected } = detectBrickCollisions({
+            ballParams: BALL_PARAMS,
+            brickParams: level,
+          });
+
           createRectangle(context, {
             ...level,
             fill: colors.waxFlower[600],
-          })
-        );
-    });
+          });
+
+          if (isBallCollisionDetected) {
+            dy = -dy;
+
+            return {
+              ...level,
+              isActive: false,
+            };
+          }
+
+          return {
+            ...level,
+          };
+        })
+    );
 
     if (isHorizontalCollisionDetected) {
       dx = -dx;

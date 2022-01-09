@@ -1,3 +1,5 @@
+const BRICKS_ARRAY = Array(8).fill(null);
+
 export const BALL_RADIUS = 15;
 export const BALL_X = 600;
 export const BALL_DX = 5;
@@ -5,11 +7,11 @@ export const BALL_Y = 300;
 export const BALL_DY = -5;
 
 export const BRICK_HEIGHT = 25;
-export const BRICK_WIDTH = 225;
-export const BRICK_X = 17.5;
+export const BRICK_WIDTH = 144;
+export const BRICK_X = 6;
 export const BRICK_Y = 10;
 export const BRICK_VERTICAL_OFFSET = 10;
-export const BRICK_HORIZONTAL_OFFSET = 10;
+export const BRICK_HORIZONTAL_OFFSET = 5;
 
 export const PADDLE_HEIGHT = 15;
 export const PADDLE_WIDTH = 150;
@@ -31,10 +33,9 @@ export const BALL_INIT_PARAMS = {
   RADIUS: BALL_RADIUS,
 };
 
-export const BRICKS_INIT_PARAMS = {
-  TOP: Array(5)
-    .fill(null)
-    .map((_, i) => ({
+export const BRICKS_INIT_PARAMS = [
+  [
+    ...BRICKS_ARRAY.map((_, i) => ({
       id: i + 1,
       x: BRICK_X + i * (BRICK_WIDTH + BRICK_HORIZONTAL_OFFSET),
       y: TOP_LEVEL_BRICK_Y,
@@ -42,27 +43,28 @@ export const BRICKS_INIT_PARAMS = {
       width: BRICK_WIDTH,
       isActive: true,
     })),
-  MIDDLE: Array(5)
-    .fill(null)
-    .map((_, i) => ({
-      id: i + 1,
+  ],
+  [
+    ...BRICKS_ARRAY.map((_, i) => ({
+      id: i + 9,
       x: BRICK_X + i * (BRICK_WIDTH + BRICK_HORIZONTAL_OFFSET),
       y: MIDDLE_LEVEL_BRICK_Y,
       height: BRICK_HEIGHT,
       width: BRICK_WIDTH,
       isActive: true,
     })),
-  BOTTOM: Array(5)
-    .fill(null)
-    .map((_, i) => ({
-      id: i + 1,
+  ],
+  [
+    ...BRICKS_ARRAY.map((_, i) => ({
+      id: i + 17,
       x: BRICK_X + i * (BRICK_WIDTH + BRICK_HORIZONTAL_OFFSET),
       y: BOTTOM_LEVEL_BRICK_Y,
       height: BRICK_HEIGHT,
       width: BRICK_WIDTH,
       isActive: true,
     })),
-};
+  ],
+];
 
 export const PADDLE_INIT_PARAMS = {
   X: PADDLE_X,
