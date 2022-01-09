@@ -13,13 +13,9 @@ export const setRectangleParms = ({
 });
 
 export const createRectangle = (
-  context: CanvasRenderingContext2D | null,
+  context: CanvasRenderingContext2D,
   options: CreateRectangleOptionsParams
 ): void => {
-  if (!context) {
-    return;
-  }
-
   const { x, y, height, width, fill } = options;
 
   context.fillStyle = fill;
